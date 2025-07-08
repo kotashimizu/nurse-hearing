@@ -1,0 +1,99 @@
+{
+  "project": {
+    "name": "訪問看護事業支援システム",
+    "description": "訪問看護事業における業務効率化と品質向上を実現するための統合管理システム"
+  },
+  "ai": {
+    "model": "claude-3-opus",
+    "temperature": 0.7,
+    "apiKey": "${ANTHROPIC_API_KEY}"
+  },
+  "taskManagement": {
+    "todoFile": "TODO.md",
+    "updateMode": "interactive",
+    "notifications": {
+      "enabled": true,
+      "sound": true,
+      "desktop": true
+    }
+  },
+  "phases": [
+    {
+      "id": "phase1",
+      "name": "第1フェーズ - 勤怠管理・シフト作成",
+      "priority": "high",
+      "duration": "3週間",
+      "categories": ["基盤構築", "シフト管理機能", "勤怠管理機能"]
+    },
+    {
+      "id": "phase2",
+      "name": "第2フェーズ - 給与計算・評価システム",
+      "priority": "medium",
+      "duration": "2週間",
+      "categories": ["給与計算", "評価システム"]
+    },
+    {
+      "id": "phase3",
+      "name": "第3フェーズ - 看護記録自動化・ルート最適化",
+      "priority": "medium",
+      "duration": "2週間",
+      "categories": ["看護記録", "ルート最適化"]
+    },
+    {
+      "id": "phase4",
+      "name": "第4フェーズ - その他機能",
+      "priority": "low",
+      "duration": "1週間",
+      "categories": ["その他機能"]
+    }
+  ],
+  "integrations": {
+    "git": {
+      "enabled": true,
+      "autoCommit": false,
+      "commitPrefix": {
+        "task": "task:",
+        "feature": "feat:",
+        "fix": "fix:",
+        "test": "test:"
+      }
+    },
+    "testing": {
+      "e2e": {
+        "enabled": true,
+        "trigger": "🧪 E2Eテスト",
+        "command": "npm run test:e2e"
+      },
+      "unit": {
+        "enabled": true,
+        "command": "npm test"
+      }
+    }
+  },
+  "automation": {
+    "dailyStandup": {
+      "enabled": true,
+      "time": "09:00",
+      "format": "markdown"
+    },
+    "progressReport": {
+      "enabled": true,
+      "frequency": "weekly",
+      "includeMetrics": true
+    }
+  },
+  "ai_assistance": {
+    "codeReview": {
+      "enabled": true,
+      "trigger": "onTaskComplete"
+    },
+    "documentationGeneration": {
+      "enabled": true,
+      "format": "markdown"
+    },
+    "testGeneration": {
+      "enabled": true,
+      "coverage": 80
+    }
+  }
+}

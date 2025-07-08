@@ -12,8 +12,74 @@
       "Bash(git push:*)",
       "Bash(cat:*)",
       "Bash(xattr:*)",
-      "Bash(git config:*)"
+      "Bash(git config:*)",
+      "Bash(grep:*)",
+      "Bash(npm run lint:*)",
+      "Bash(npm run test:*)",
+      "Bash(npx tsc:*)",
+      "Bash(afplay:*)",
+      "Bash(echo:*)",
+      "Bash(chmod:*)",
+      "Bash(npm install:*)"
     ],
     "deny": []
+  },
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "jq -e 'select(.tool_name == \"Edit\" or .tool_name == \"MultiEdit\") | select(.tool_input.file_path | test(\"TODO.md\")) | select(.tool_input.new_string | test(\"\\\\[x\\\\].*🧪 E2Eテスト\"))' || exit 1",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo '\\n🎯 E2Eテストタスクが検出されました！\\n🚀 Playwright MCPを使用してE2Eテストを実行します...\\n' && afplay /System/Library/Sounds/Submarine.aiff 2>/dev/null || echo ''"
+          },
+          {
+            "type": "command",
+            "command": "echo '\\n📝 E2Eテストプロンプト:\\n「Playwright MCPを使用して、完了したタスクに対応するE2Eテストを実行してください。CLAUDE.mdのE2Eテストシナリオに従ってテストを作成・実行し、結果をレポートしてください。」\\n'"
+          },
+          {
+            "type": "command",
+            "command": "cd /Users/kota5656/projects/nurse-hearing && node scripts/generate-e2e-prompt.js 2>/dev/null || echo '⚠️  E2Eプロンプト生成スクリプトが見つかりません'"
+          }
+        ]
+      },
+      {
+        "matcher": "jq -e 'select(.tool_name == \"Edit\" or .tool_name == \"MultiEdit\") | select(.tool_input.file_path | test(\"TODO.md\")) | select(.tool_input.new_string | test(\"\\\\[x\\\\]\"))' || exit 1",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo '\\n✅ TODOが完了しました！' && afplay /System/Library/Sounds/Hero.aiff 2>/dev/null || echo ''"
+          },
+          {
+            "type": "command",
+            "command": "echo '\\n🔍 コードチェックを実行中...' && cd /Users/kota5656/projects/nurse-hearing && (npm run lint 2>/dev/null || echo '⚠️  Lintが設定されていません')"
+          },
+          {
+            "type": "command",
+            "command": "cd /Users/kota5656/projects/nurse-hearing && (npx tsc --noEmit 2>/dev/null || echo '⚠️  TypeScriptチェックができません')"
+          }
+        ]
+      },
+      {
+        "matcher": "jq -e 'select(.tool_name == \"TodoWrite\") | select(.tool_input.todos[]? | select(.status == \"completed\"))' || exit 1",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo '\\n✅ タスクが完了しました！' && afplay /System/Library/Sounds/Glass.aiff 2>/dev/null || echo ''"
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "jq -e 'select(.tool_name == \"Bash\") | select(.tool_input.command | test(\"rm -rf|dd if=|mkfs\"))' || exit 1",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo '⚠️  危険なコマンドを検知しました！' 1>&2 && exit 2"
+          }
+        ]
+      }
+    ]
   }
 }
