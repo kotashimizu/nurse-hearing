@@ -24,7 +24,9 @@
       "Bash(npm run:*)",
       "Bash(mkdir:*)",
       "Bash(git checkout:*)",
-      "Bash(npx supabase:*)"
+      "Bash(npx supabase:*)",
+      "Bash(git merge:*)",
+      "Bash(git stash:*)"
     ],
     "deny": []
   },
