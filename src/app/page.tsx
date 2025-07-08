@@ -1,4 +1,15 @@
-export default function Home() {
+import { createClient } from '@/lib/supabase/server'
+import { redirect } from 'next/navigation'
+import Link from 'next/link'
+
+export default async function Home() {
+  const supabase = await createClient()
+  const { data: { user } } = await supabase.auth.getUser()
+
+  if (user) {
+    redirect('/dashboard')
+  }
+
   return (
     <main className="container mx-auto px-4 py-8">
       <div className="max-w-4xl mx-auto">
@@ -54,12 +65,12 @@ export default function Home() {
         </div>
         
         <div className="text-center">
-          <a
+          <Link
             href="/login"
             className="btn-primary inline-block text-lg px-8 py-3"
           >
             ログイン画面へ
-          </a>
+          </Link>
         </div>
       </div>
     </main>
