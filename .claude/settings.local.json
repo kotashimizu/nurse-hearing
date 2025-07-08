@@ -20,7 +20,9 @@
       "Bash(afplay:*)",
       "Bash(echo:*)",
       "Bash(chmod:*)",
-      "Bash(npm install:*)"
+      "Bash(npm install:*)",
+      "Bash(npm run:*)",
+      "Bash(mkdir:*)"
     ],
     "deny": []
   },

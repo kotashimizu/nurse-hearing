@@ -1,0 +1,25 @@
+{
+  "name": "訪問看護事業支援システム",
+  "short_name": "訪問看護",
+  "description": "訪問看護事業の業務効率化を支援するシステム",
+  "theme_color": "#0ea5e9",
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "orientation": "portrait",
+  "scope": "/",
+  "start_url": "/",
+  "icons": [
+    {
+      "src": "/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "categories": ["medical", "productivity"],
+  "lang": "ja"
+}
