@@ -1,5 +1,9 @@
 # 訪問看護事業支援システム - 開発TODOリスト
 
+## プロジェクトファイル
+- 要件定義書: `requirements.md`
+- クライアント確認事項: `client-confirmation.md`
+
 ## 第1フェーズ（最優先）- 勤怠管理・シフト作成
 ### 基盤構築
 - [ ] プロジェクト初期設定（Next.js 14 + TypeScript + Tailwind CSS）
