@@ -1,0 +1,68 @@
+version: '3.8'
+
+services:
+  # 開発環境用のNext.jsアプリケーション
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    container_name: nurse-hearing-app-dev
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=development
+      - WATCHPACK_POLLING=true
+    env_file:
+      - .env.local
+    volumes:
+      - .:/app
+      - /app/node_modules
+      - /app/.next
+    depends_on:
+      - db
+      - redis
+    networks:
+      - nurse-hearing-network
+    command: npm run dev
+
+  # データベース（開発環境）
+  db:
+    image: postgres:15-alpine
+    container_name: nurse-hearing-db-dev
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=nurse_hearing_dev
+    volumes:
+      - postgres_data_dev:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    networks:
+      - nurse-hearing-network
+
+  # Redis（開発環境）
+  redis:
+    image: redis:7-alpine
+    container_name: nurse-hearing-redis-dev
+    ports:
+      - "6379:6379"
+    networks:
+      - nurse-hearing-network
+
+  # Adminer（データベース管理ツール）
+  adminer:
+    image: adminer
+    container_name: nurse-hearing-adminer
+    ports:
+      - "8080:8080"
+    networks:
+      - nurse-hearing-network
+    depends_on:
+      - db
+
+volumes:
+  postgres_data_dev:
+
+networks:
+  nurse-hearing-network:
+    driver: bridge
