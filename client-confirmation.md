@@ -1,168 +1,168 @@
-# クライアントへの確認事項
+# Client Confirmation Items
 
-## 1. 業務フロー・運用に関する確認
+## 1. Business Flow and Operations
 
-### 1.1 シフト作成関連
-- シフト希望提出の締切日は毎月何日ですか？
-- シフト確定の通知タイミングはいつですか？
-- 急な欠勤・シフト変更の対応フローは？
-- 最小必要人員数の設定基準（時間帯別、曜日別など）
-- オンコール体制の管理は必要ですか？
+### 1.1 Shift Management
+- What is the monthly deadline for shift request submissions?
+- When should shift confirmations be notified?
+- How to handle emergency absences and shift changes?
+- Minimum staffing requirements (by time slot, day of week)
+- Is on-call management needed?
 
-### 1.2 勤怠管理関連
-- 移動時間は勤務時間に含まれますか？
-- 休憩時間の取り扱いルール
-- 残業の定義と承認フロー
-- 直行直帰の場合の勤怠管理方法
-- GPSの精度要件（何メートル以内なら訪問とみなすか）
+### 1.2 Attendance Management
+- Is travel time included in working hours?
+- Break time rules
+- Overtime definition and approval flow
+- How to manage direct visits (no office check-in)
+- GPS accuracy requirements (within how many meters counts as a visit)
 
-### 1.3 給与計算関連
-- 交通費の計算方法（実費精算？定額？）
-- 休日手当、深夜手当の有無と計算方法
-- 賞与の計算ルール
-- 社会保険料等の控除項目
-- 給与明細の発行タイミングと方法
+### 1.3 Payroll Calculation
+- Transportation cost calculation method (actual expense or fixed amount?)
+- Holiday and late-night allowances
+- Bonus calculation rules
+- Social insurance deductions
+- Payslip issuance timing and method
 
-## 2. データ連携・既存システムに関する確認
+## 2. Data Integration and Existing Systems
 
-### 2.1 カイポケ連携
-- 現在カイポケで管理している具体的な情報
-- カイポケから取得したいデータ項目
-- カイポケへ反映したいデータ項目
-- CSV等でのデータ入出力は可能か？
-- API連携の可能性はあるか？
+### 2.1 Kaipoke Integration
+- Specific information currently managed in Kaipoke
+- Data items to retrieve from Kaipoke
+- Data items to sync to Kaipoke
+- Is CSV import/export available?
+- API integration possibilities
 
-### 2.2 その他システム連携
-- 会計システムの利用有無と連携要件
-- 勤怠管理システムの利用有無
-- 給与計算システムの利用有無
-- 請求業務システムの利用有無
+### 2.2 Other System Integration
+- Accounting system usage and integration requirements
+- Attendance management system usage
+- Payroll system usage
+- Billing system usage
 
-## 3. セキュリティ・コンプライアンスに関する確認
+## 3. Security and Compliance
 
-### 3.1 アクセス権限
-- 各役職別の閲覧・編集権限の詳細
-- 個人情報へのアクセス制限ルール
-- ログの保存期間と監査要件
-- 端末紛失時の対応（リモートワイプ等）
+### 3.1 Access Control
+- Detailed viewing/editing permissions by role
+- Personal information access restrictions
+- Log retention period and audit requirements
+- Lost device response (remote wipe, etc.)
 
-### 3.2 データ保護
-- バックアップの頻度と保存期間
-- 災害時の事業継続計画（BCP）
-- データセンターの所在地要件（国内限定等）
-- 監査証跡の必要性
+### 3.2 Data Protection
+- Backup frequency and retention period
+- Business continuity plan (BCP)
+- Data center location requirements
+- Audit trail necessity
 
-## 4. 利用者評価システムに関する確認
+## 4. User Evaluation System
 
-### 4.1 評価の実施方法
-- 誰が評価を入力するのか（利用者本人？家族？スタッフ代行？）
-- 評価の頻度（訪問毎？月1回？）
-- 評価項目の詳細（満足度以外に必要な項目）
-- 匿名性の必要性
-- 評価結果の開示範囲
+### 4.1 Evaluation Implementation
+- Who enters evaluations (users, families, staff proxy?)
+- Evaluation frequency (per visit? monthly?)
+- Detailed evaluation items beyond satisfaction
+- Anonymity requirements
+- Evaluation result disclosure scope
 
-### 4.2 LINE連携の詳細
-- LINEアカウントの管理方法
-- 利用者のLINE利用率
-- LINE以外の評価入力方法の必要性
-- プッシュ通知の要否
+### 4.2 LINE Integration Details
+- LINE account management method
+- User LINE usage rate
+- Need for non-LINE evaluation methods
+- Push notification requirements
 
-## 5. 音声入力・看護記録に関する確認
+## 5. Voice Input and Nursing Records
 
-### 5.1 記録内容
-- 必須記録項目の一覧
-- テンプレート化できる定型文
-- 医療用語の辞書登録の必要性
-- 画像添付の必要性（褥瘡の写真等）
-- 署名・承認フローの有無
+### 5.1 Record Content
+- Required record items list
+- Standardizable templates
+- Medical terminology dictionary needs
+- Image attachment needs (bedsore photos, etc.)
+- Signature/approval workflow
 
-### 5.2 音声入力環境
-- 訪問先でのネットワーク環境
-- オフライン対応の必要性
-- 騒音環境での利用想定
-- 使用予定のヘッドセット機種
+### 5.2 Voice Input Environment
+- Network environment at visit locations
+- Offline support needs
+- Noisy environment usage
+- Planned headset models
 
-## 6. 訪問ルート最適化に関する確認
+## 6. Visit Route Optimization
 
-### 6.1 最適化の条件
-- 優先順位（時間厳守が必要な利用者等）
-- スタッフの移動手段（車、自転車、徒歩）
-- 駐車場の有無情報の管理
-- 天候による影響の考慮
-- スタッフの居住地からの出発を考慮するか
+### 6.1 Optimization Conditions
+- Priority settings (time-critical users, etc.)
+- Staff transportation methods (car, bicycle, walking)
+- Parking availability management
+- Weather impact considerations
+- Consider departure from staff residences?
 
-### 6.2 スタッフと利用者の相性
-- 相性の評価基準
-- NGな組み合わせの管理方法
-- 新人教育時のペア訪問の考慮
+### 6.2 Staff-User Compatibility
+- Compatibility evaluation criteria
+- NG combination management
+- Pair visit considerations for training
 
-## 7. システム利用環境に関する確認
+## 7. System Usage Environment
 
-### 7.1 利用デバイス
-- スタッフが使用する端末（私物？貸与？）
-- 端末のOS・バージョン
-- 画面サイズの最小要件
-- プリンター利用の有無
+### 7.1 Devices
+- Staff devices (personal or provided?)
+- Device OS and versions
+- Minimum screen size requirements
+- Printer usage
 
-### 7.2 ネットワーク環境
-- 事務所のインターネット環境
-- VPN接続の必要性
-- 通信量の制限（モバイル通信利用時）
+### 7.2 Network Environment
+- Office internet environment
+- VPN connection needs
+- Data usage limits (mobile data)
 
-## 8. 将来的な拡張に関する確認
+## 8. Future Expansion
 
-### 8.1 事業規模
-- 現在のスタッフ数と利用者数
-- 1年後、3年後の想定規模
-- 新規事業所開設の予定
-- 他事業（デイサービス等）への展開予定
+### 8.1 Business Scale
+- Current staff and user numbers
+- Expected scale in 1 and 3 years
+- New office opening plans
+- Expansion to other services (day service, etc.)
 
-### 8.2 機能追加要望
-- 優先度は低いが将来的に欲しい機能
-- 他社システムで便利だと感じた機能
-- 現場スタッフからの要望事項
+### 8.2 Feature Requests
+- Low priority but desired future features
+- Convenient features from other systems
+- Field staff requests
 
-## 9. 運用・保守に関する確認
+## 9. Operations and Maintenance
 
-### 9.1 サポート体制
-- 問い合わせ対応時間の希望
-- 緊急時の対応要件
-- 操作研修の実施方法（集合研修？個別？）
-- マニュアルの形式（動画？PDF？）
+### 9.1 Support System
+- Desired support hours
+- Emergency response requirements
+- Training method (group or individual?)
+- Manual format (video or PDF?)
 
-### 9.2 システム更新
-- メンテナンス可能時間帯
-- 機能追加の頻度
-- アップデート時の検証環境の必要性
+### 9.2 System Updates
+- Maintenance window availability
+- Feature addition frequency
+- Test environment needs for updates
 
-## 10. 費用・契約に関する確認
+## 10. Costs and Contracts
 
-### 10.1 初期費用
-- 追加機能開発時の費用負担の考え方
-- データ移行作業の費用
-- 研修費用の扱い
+### 10.1 Initial Costs
+- Additional feature development cost approach
+- Data migration costs
+- Training cost handling
 
-### 10.2 運用費用
-- 月額保守費用の予算感
-- 従量課金（SMS送信等）の上限設定
-- 契約期間と更新条件
+### 10.2 Operating Costs
+- Monthly maintenance budget
+- Usage-based billing limits (SMS, etc.)
+- Contract period and renewal terms
 
-## 11. その他の確認事項
+## 11. Other Confirmation Items
 
-### 11.1 災害・緊急時対応
-- 災害時の安否確認機能の必要性
-- 緊急連絡網の管理
-- BCPに基づくデータ復旧要件
+### 11.1 Disaster/Emergency Response
+- Disaster safety confirmation needs
+- Emergency contact management
+- BCP-based data recovery requirements
 
-### 11.2 外部監査対応
-- 行政監査への対応（必要な帳票等）
-- ISO等の認証取得予定
-- 監査ログの要件
+### 11.2 External Audit Support
+- Administrative audit support (required forms)
+- ISO certification plans
+- Audit log requirements
 
-### 11.3 多言語対応
-- 外国人スタッフの有無
-- 外国人利用者への対応
-- 必要な言語（英語、中国語等）
+### 11.3 Multi-language Support
+- Foreign staff presence
+- Foreign user support
+- Required languages (English, Chinese, etc.)
 
-これらの確認事項について、優先順位をつけて段階的に確認することをお勧めします。
-特に第1フェーズ（勤怠管理、シフト作成）に関わる項目から確認を始めると良いでしょう。
+These items should be confirmed in order of priority.
+Start with Phase 1 (attendance management, shift creation) related items.
