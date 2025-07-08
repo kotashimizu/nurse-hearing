@@ -1,0 +1,29 @@
+# Git attributes for handling Japanese filenames and text encoding
+
+# Set default behavior to automatically normalize line endings
+* text=auto
+
+# Force UTF-8 encoding for all text files
+*.md text encoding=utf-8
+*.txt text encoding=utf-8
+*.json text encoding=utf-8
+*.yml text encoding=utf-8
+*.yaml text encoding=utf-8
+*.js text encoding=utf-8
+*.ts text encoding=utf-8
+*.tsx text encoding=utf-8
+*.jsx text encoding=utf-8
+*.css text encoding=utf-8
+*.html text encoding=utf-8
+
+# Ensure proper diff handling for Japanese text
+*.md diff=utf8
+*.txt diff=utf8
+
+# Binary files
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.pdf binary

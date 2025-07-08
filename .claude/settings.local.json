@@ -9,7 +9,10 @@
       "Bash(git add:*)",
       "Bash(git commit:*)",
       "Bash(rm:*)",
-      "Bash(git push:*)"
+      "Bash(git push:*)",
+      "Bash(cat:*)",
+      "Bash(xattr:*)",
+      "Bash(git config:*)"
     ],
     "deny": []
   }
